@@ -1,7 +1,17 @@
+#ifndef GLOBAL_H
+#define GLOBAL_H
+
 #include <stdio.h>
-#include <SDL2/SDL.h>
-#include <SDL2_image/SDL_image.h>
-#include <SDL2_ttf/SDL_ttf.h>
+
 
 #define TRUE  1
 #define FALSE 0
+
+#define LINES   4
+#define COLUMNS 4
+
+
+int game[LINES][COLUMNS] = {0};
+
+
+#endif
