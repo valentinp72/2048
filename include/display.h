@@ -12,13 +12,14 @@ SDL_Window *screen;
 SDL_Renderer *renderer;
 SDL_Surface *texte;
 SDL_Rect position;
-TTF_Font *roboto = NULL;
+TTF_Font *roboto;
 
-SDL_Color BLACK_C = {0, 0, 0};
-SDL_Color WHITE_C = {255, 255, 255};
+SDL_Color BLACK_C;
+SDL_Color WHITE_C;
 
 void initScreen();
 void exitScreen();
-void displayText(char * msg, TTF_Font *font, SDL_Color color);
+void displayText(char * msg, TTF_Font *font, SDL_Color color, int x, int y);
+void displayTextCentered(char * msg, TTF_Font *font, SDL_Color color, int y);
 
 #endif

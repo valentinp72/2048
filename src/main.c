@@ -1,4 +1,5 @@
 #include "../include/global.h"
+#include "../include/display.h"
 
 int main(){
 
@@ -7,7 +8,8 @@ int main(){
   SDL_Event event;
   int quit = FALSE;
 
-  displayText("aaaa", roboto, BLACK_C);
+  displayText("2048", roboto, BLACK_C, 0, 0);
+  displayTextCentered("2048", roboto, BLACK_C, 0);
 
   while(quit == FALSE){
 

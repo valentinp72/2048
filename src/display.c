@@ -1,10 +1,22 @@
 #include "../include/global.h"
+#include "../include/display.h"
 
+void initColors(){
+  BLACK_C.r = 0;
+  BLACK_C.g = 0;
+  BLACK_C.b = 0;
+
+  WHITE_C.r = 255;
+  WHITE_C.g = 255;
+  WHITE_C.b = 255;
+}
 
 void initScreen(){
 
   SDL_Init(SDL_INIT_VIDEO);
   TTF_Init();
+
+  initColors();
 
   roboto = TTF_OpenFont("media/Roboto-Light.ttf", 65);
 
@@ -34,7 +46,7 @@ void exitScreen(){
 
 }
 
-void displayText(char * msg, TTF_Font *font, SDL_Color color){
+void displayText(char * msg, TTF_Font *font, SDL_Color color, int x, int y){
 
   int texW = 0;
   int texH = 0;
@@ -43,7 +55,27 @@ void displayText(char * msg, TTF_Font *font, SDL_Color color){
   SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, surface);
 
   SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-  SDL_Rect dstrect = {(WIDTH - texW)/2, 0, texW, texH };
+  SDL_Rect dstrect = {x, y, texW, texH};
+
+
+  SDL_RenderCopy(renderer, texture, NULL, &dstrect);
+  SDL_RenderPresent(renderer);
+
+  SDL_DestroyTexture(texture);
+  SDL_FreeSurface(surface);
+
+}
+
+void displayTextCentered(char * msg, TTF_Font *font, SDL_Color color, int y){
+
+  int texW = 0;
+  int texH = 0;
+
+  SDL_Surface * surface = TTF_RenderText_Blended(font, msg, color);
+  SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+  SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
+  SDL_Rect dstrect = {(WIDTH - texW)/2, y, texW, texH};
 
 
   SDL_RenderCopy(renderer, texture, NULL, &dstrect);

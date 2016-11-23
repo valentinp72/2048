@@ -2,7 +2,6 @@
 #define GLOBAL_H
 
 #include <stdio.h>
-#include "display.h"
 
 
 #define TRUE  1
@@ -12,7 +11,7 @@
 #define COLUMNS 4
 
 
-int game[LINES][COLUMNS] = {0};
+int game[LINES][COLUMNS];
 
 
 #endif
