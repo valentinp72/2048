@@ -1,5 +1,4 @@
 #include "../include/global.h"
-#include "../include/display.h"
 
 
 void initScreen(){

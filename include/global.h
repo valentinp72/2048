@@ -2,6 +2,7 @@
 #define GLOBAL_H
 
 #include <stdio.h>
+#include "display.h"
 
 
 #define TRUE  1
