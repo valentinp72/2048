@@ -2,7 +2,8 @@
 #define GLOBAL_H
 
 #include <stdio.h>
-
+#include "display.h"
+#include "moves.h"
 
 #define TRUE  1
 #define FALSE 0
