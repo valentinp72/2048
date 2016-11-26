@@ -35,16 +35,15 @@ int hasLost(){
 
 void placeRandom(){
   int i, j;
-  int security = 0;
 
-  do{
-    i = randab(0, LINES);
-    j = randab(0, COLUMNS);
-    security++;
-  }while(game[i][j] != 0 && security < 1000);
+  if(!hasLost()){
+    do{
+      i = randab(0, LINES);
+      j = randab(0, COLUMNS);
+    }while(game[i][j] != 0);
 
-  if(security < 1000)
     game[i][j] = 2;
+  }
 
 }
 
