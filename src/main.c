@@ -10,6 +10,7 @@ int main(){
   int quit = FALSE;
 
   initGame();
+  displayGame();
 
   while(quit == FALSE){
     while(SDL_PollEvent(&event)){
@@ -17,6 +18,7 @@ int main(){
       switch(event.type){
         case SDL_KEYDOWN:
           if(hasLost()) initGame();
+          displayGame();
           switch(event.key.keysym.sym){
             case SDLK_UP:    move(UP);    break;
             case SDLK_DOWN:  move(DOWN);  break;
@@ -24,13 +26,15 @@ int main(){
             case SDLK_RIGHT: move(RIGHT); break;
 
             case SDLK_q:     quit = TRUE;        break;
-          } break;
+          }
+          displayGame();
+
+          break;
 
         case SDL_QUIT: quit = TRUE; break;
         default: break;
 
       }
-      displayGame();
 
     }
   }
