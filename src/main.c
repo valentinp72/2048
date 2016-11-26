@@ -4,6 +4,8 @@ int main(){
 
   initScreen();
 
+  srand(time(NULL));
+
   SDL_Event event;
   int quit = FALSE;
 
@@ -14,6 +16,7 @@ int main(){
 
       switch(event.type){
         case SDL_KEYDOWN:
+          if(hasLost()) initGame();
           switch(event.key.keysym.sym){
             case SDLK_UP:    move(UP);    break;
             case SDLK_DOWN:  move(DOWN);  break;

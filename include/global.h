@@ -2,6 +2,8 @@
 #define GLOBAL_H
 
 #include <stdio.h>
+#include <time.h>
+
 #include "display.h"
 #include "moves.h"
 

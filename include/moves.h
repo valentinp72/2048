@@ -6,6 +6,8 @@
 typedef enum {UP, DOWN, LEFT, RIGHT} t_direction;
 
 void initGame();
+int hasLost();
+void placeRandom();
 void move(t_direction dir);
 
 #endif
