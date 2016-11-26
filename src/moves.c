@@ -52,13 +52,6 @@ void move(t_direction dir){
   int i, j, k;
   int hasMoved = FALSE;
 
-  switch (dir) {
-    case UP    :  break;
-    case DOWN  :  break;
-    case LEFT  :  break;
-    case RIGHT :  break;
-  }
-
   if(dir == LEFT){
     for(k = 1 ; k <= 4 ; k++){
       for(i = 0 ; i < LINES ; i++){
@@ -135,7 +128,7 @@ void move(t_direction dir){
       }
     }
   }
-
+  // Empeche de placer un pion si le joueur n'as pas joué un coup valide
   if(hasMoved) placeRandom();
 
 }
