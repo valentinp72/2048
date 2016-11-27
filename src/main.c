@@ -13,7 +13,7 @@ int main(){
   displayGame();
 
   while(quit == FALSE){
-    while(SDL_PollEvent(&event)){
+    if(SDL_WaitEvent(&event) != 0){
 
       switch(event.type){
         case SDL_KEYDOWN:

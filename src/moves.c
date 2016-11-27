@@ -52,8 +52,6 @@ void move(t_direction dir){
   int i, j, k;
   int hasMoved = FALSE;
 
-  printf("------------\n\n\n");
-
   if(dir == LEFT){
     for(k = 1 ; k <= 4 ; k++){
       for(i = 0 ; i < LINES ; i++){
