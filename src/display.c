@@ -24,6 +24,7 @@ void initScreen(){
   roboto = TTF_OpenFont("media/Roboto-Light.ttf", 100);
 
   screen = SDL_CreateWindow("2048", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
+  SDL_SetWindowPosition(screen, 0, 0);
   renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_ACCELERATED);
 
   SDL_Surface *logo = IMG_Load("media/logo.png");
