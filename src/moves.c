@@ -10,6 +10,7 @@ void initGame(){
   }
   placeRandom();
 }
+
 int randab(int a, int b) {
 	int tmp;
 
@@ -138,5 +139,23 @@ void move(t_direction dir){
 
   // Empeche de placer un pion si le joueur n'as pas joué un coup valide
   if(hasMoved) placeRandom();
+
+}
+
+void saveGame(){
+
+  FILE *file;
+  int i, j;
+
+  file = fopen("game.txt", "w");
+
+  for(i = 0 ; i < LINES ; i++){
+    for(j = 0 ; j < COLUMNS ; j++){
+      fprintf(file, "%04i ", game[i][j]);
+    }
+    fprintf(file, "\n");
+  }
+
+  fclose(file);
 
 }

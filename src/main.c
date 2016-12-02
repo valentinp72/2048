@@ -11,14 +11,14 @@ int main(){
 
   initGame();
   displayGame();
+  saveGame();
 
   while(quit == FALSE){
     if(SDL_WaitEvent(&event) != 0){
 
       switch(event.type){
         case SDL_KEYDOWN:
-          if(hasLost()) initGame();
-          displayGame();
+
           switch(event.key.keysym.sym){
             case SDLK_UP:    move(UP);    break;
             case SDLK_DOWN:  move(DOWN);  break;
@@ -28,6 +28,10 @@ int main(){
             case SDLK_q:     quit = TRUE;        break;
           }
           displayGame();
+          saveGame();
+          
+          if(hasLost()) quit = TRUE;
+
 
           break;
 

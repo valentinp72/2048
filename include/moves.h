@@ -9,5 +9,6 @@ void initGame();
 int hasLost();
 void placeRandom();
 void move(t_direction dir);
+void saveGame();
 
 #endif
