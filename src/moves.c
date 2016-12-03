@@ -149,6 +149,8 @@ void saveGame(){
 
   file = fopen("game.txt", "w");
 
+  fprintf(file, "%i\n", hasLost());
+
   for(i = 0 ; i < LINES ; i++){
     for(j = 0 ; j < COLUMNS ; j++){
       fprintf(file, "%04i ", game[i][j]);
